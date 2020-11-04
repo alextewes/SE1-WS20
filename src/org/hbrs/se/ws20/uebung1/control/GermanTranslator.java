@@ -1,5 +1,7 @@
 package org.hbrs.se.ws20.uebung1.control;
 
+import java.util.HashMap;
+
 public class GermanTranslator implements Translator {
 
 	public String date = "Okt/2020"; // Default-Wert
@@ -7,11 +9,22 @@ public class GermanTranslator implements Translator {
 	/**
 	 * Methode zur Übersetzung einer Zahl in eine String-Repraesentation
 	 */
-	public String translateNumber( int number ) { 
-		// [ihr Source Code aus Übung 1-2] 
-		return null;
+	public String translateNumber( int number ) {
+		HashMap<Integer, String> numbers = new HashMap<>(10);
+		numbers.put(1, "eins");
+		numbers.put(2, "zwei");
+		numbers.put(3, "drei");
+		numbers.put(4, "vier");
+		numbers.put(5, "fuenf");
+		numbers.put(6, "sechs");
+		numbers.put(7, "sieben");
+		numbers.put(8, "acht");
+		numbers.put(9, "neun");
+		numbers.put(10, "zehn");
+		if(number < 1 || number > 10) throw new IllegalArgumentException();
+		return numbers.get(number);
 	}
-		
+
 	/**
 	 * Objektmethode der Klasse GermanTranslator zur Ausgabe einer Info.
 	 */
