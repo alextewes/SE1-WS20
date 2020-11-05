@@ -7,9 +7,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class GermanTranslatorTest {
 
+    Translator t = new GermanTranslator();
+
+
     @org.junit.jupiter.api.Test
     void translateNumberTest() {
-        Translator t = new GermanTranslator();
         assertEquals("zwei", t.translateNumber(2));
         assertThrows(IllegalArgumentException.class, () -> t.translateNumber(-1));
         assertThrows(IllegalArgumentException.class, () -> t.translateNumber(16));

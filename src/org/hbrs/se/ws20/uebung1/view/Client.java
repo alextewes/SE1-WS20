@@ -3,7 +3,7 @@ package org.hbrs.se.ws20.uebung1.view;
 import org.hbrs.se.ws20.uebung1.control.Factory;
 import org.hbrs.se.ws20.uebung1.control.Translator;
 
-class Client {
+public class Client {
 
 	/*
 	 * Methode zur Ausgabe einer Zahl auf der Console
