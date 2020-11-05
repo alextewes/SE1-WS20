@@ -13,10 +13,9 @@ public class Client {
 		// mit dem übergegebenen Wert der Variable aNumber
 		// aufgerufen werden.
 		// Strenge Implementierung gegen das Interface Translator gewuenscht!
-		Factory f = new Factory();
-		Translator gt = f.createTranslator();
+		Translator translator = Factory.createTranslator();
 		System.out.println("Das Ergebnis der Berechnung: " +
-				gt.translateNumber(aNumber) );
+				translator.translateNumber(aNumber) );
 
 	}
 }
