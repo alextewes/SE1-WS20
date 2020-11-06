@@ -21,7 +21,10 @@ public class GermanTranslator implements Translator {
 		numbers.put(8, "acht");
 		numbers.put(9, "neun");
 		numbers.put(10, "zehn");
-		if(number < 1 || number > 10) throw new IllegalArgumentException();
+		if(number < 1 || number > 10) {
+			throw new IllegalArgumentException("Übersetzung der  Zahl " + number +
+					" nicht" + "möglich(" + Translator.version + ")");
+		}
 		return numbers.get(number);
 	}
 
