@@ -13,10 +13,19 @@ class GermanTranslatorTest {
     @org.junit.jupiter.api.Test
     void translateNumberTest() {
         assertEquals("zwei", t.translateNumber(2));
+        assertEquals("Übersetzung der  Zahl " + "-1" +
+                " nicht möglich(" + Translator.version + ")", t.translateNumber(-1));
+        assertEquals("Übersetzung der  Zahl " + "16" +
+                " nicht möglich(" + Translator.version + ")", t.translateNumber(16));
+        assertEquals("Übersetzung der  Zahl " + "0" +
+                " nicht möglich(" + Translator.version + ")", t.translateNumber(0));
+    }
+
+    /*
+        Lösung mit Exception:
         assertThrows(IllegalArgumentException.class, () -> t.translateNumber(-1));
         assertThrows(IllegalArgumentException.class, () -> t.translateNumber(16));
         assertThrows(IllegalArgumentException.class, () -> t.translateNumber(0));
-
-    }
+    */
 
 }
