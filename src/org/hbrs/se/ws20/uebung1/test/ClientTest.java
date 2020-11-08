@@ -9,6 +9,9 @@ public class ClientTest {
 
     void displayTest() {
         client.display(2);
+        client.display(0);
+        client.display(12);
+        client.display(-12);
     }
 
 
