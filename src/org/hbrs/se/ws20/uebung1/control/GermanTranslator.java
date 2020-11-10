@@ -22,8 +22,7 @@ public class GermanTranslator implements Translator {
 		numbers.put(9, "neun");
 		numbers.put(10, "zehn");
 
-		// Lösung nach Anforderung
-		// Fehlernachricht als Rückgabewert der Methode
+		// Fehlernachricht als Rückgabewert der Methode bei ungültiger Eingabe
 		if(number < 1 || number > 10) {
 			return  "Übersetzung der  Zahl " + number +
 					" nicht möglich(" + Translator.version + ")";
@@ -31,7 +30,7 @@ public class GermanTranslator implements Translator {
 		return numbers.get(number);
 
 		/*
-		Lösung mit Wurf einer Exception
+		Lösung mit Wurf einer Exception:
 
 		if (number < 1 || number > 10) {
 			throw new IllegalArgumentException("Übersetzung der  Zahl " + number +
@@ -39,10 +38,6 @@ public class GermanTranslator implements Translator {
 		}
 		*/
 	}
-
-
-
-
 
 	/**
 	 * Objektmethode der Klasse GermanTranslator zur Ausgabe einer Info.
