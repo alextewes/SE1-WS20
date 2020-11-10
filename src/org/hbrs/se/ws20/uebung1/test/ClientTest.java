@@ -8,11 +8,14 @@ public class ClientTest {
     Client client = new Client();
 
     void displayTest() {
-        client.display(2);
-        client.display(0);
-        client.display(12);
-        client.display(-12);
+        try {
+            client.display(2);
+            client.display(0);
+            client.display(12);
+            client.display(-2);
+        } catch(Exception e) {
+            throw new IllegalArgumentException("Falsche Eingabe", e);
+        }
     }
-
 
 }
