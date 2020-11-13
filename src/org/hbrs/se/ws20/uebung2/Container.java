@@ -29,6 +29,12 @@ public class Container {
                 "Objekt: " + memberID + " gelöscht.";
     }
 
+    public void dump() {
+        for(Member member : memberLinkedList) {
+            System.out.println(member.toString() + " (ID = " + member.getID() + ")");
+        }
+    }
+
     public int size() {
         return memberLinkedList.size();
     }
