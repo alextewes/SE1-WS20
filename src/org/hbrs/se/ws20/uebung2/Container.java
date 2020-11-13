@@ -16,4 +16,8 @@ public class Container {
 
     }
 
+    public int size() {
+        return memberLinkedList.size();
+    }
+
 }
