@@ -16,6 +16,19 @@ public class Container {
 
     }
 
+    public String deleteMember(Integer id) {
+        Integer memberID = null;
+        for(Member member : memberLinkedList) {
+            if(member.getID().equals(id)) {
+                memberID = member.getID();
+                memberLinkedList.remove(member);
+            }
+
+        }
+        return memberID == null ? "Fehler: Objekt nicht gefunden." :
+                "Objekt: " + memberID + " gelöscht.";
+    }
+
     public int size() {
         return memberLinkedList.size();
     }
