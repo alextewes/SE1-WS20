@@ -1,13 +1,14 @@
 package org.hbrs.se.ws20.uebung2;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 public class Container {
 
-    private final LinkedList<Member> memberList;
+    private final ArrayList<Member> memberList;
+
 
     public Container() {
-        memberList = new LinkedList<>();
+        memberList = new ArrayList<>();
     }
 
 
@@ -18,22 +19,22 @@ public class Container {
                     member.getID() + " ist bereits vorhanden!");
         }
         memberList.add(member);
-
-
     }
+
 
     // Methode zum Löschen von Member-Objekten des Containers
     public String deleteMember(Integer id) {
-        Member deletedMember = null;
+        Member memberToRemove = null;
         for (Member member : memberList) {
             if(member.getID().equals(id)) {
-                deletedMember = member;
-                memberList.remove(member);
+                memberToRemove = member;
             }
         }
-        return deletedMember == null ? "Fehler: Objekt nicht gefunden." :
-                "Objekt: " + deletedMember.getID() + " gelöscht.";
+        memberList.remove(memberToRemove);
+        return memberToRemove == null ? "Fehler: Objekt nicht gefunden." :
+                "Objekt: " + memberToRemove.getID() + " gelöscht.";
     }
+
 
     // Methode zur Ausgabe der Member des Containers auf Kommandozeile
     public void dump() {
@@ -42,9 +43,11 @@ public class Container {
         }
     }
 
+
     public int size() {
         return memberList.size();
     }
+
 
     public Member get(int i) {
         return memberList.get(i);
