@@ -4,7 +4,7 @@ import org.hbrs.se.ws20.uebung3.control.persistence.PersistenceException;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class Container {
+public class Container {
 
     private final List<Member> memberList = new ArrayList<>();
 
@@ -45,6 +45,10 @@ public final class Container {
 
     public Member get(int i) {
         return memberList.get(i);
+    }
+
+    public List<Member> getCurrentList() {
+        return memberList;
     }
 
     public void store() throws PersistenceException {
