@@ -1,11 +1,12 @@
 package org.hbrs.se.ws20.uebung3.control;
 
-import org.hbrs.se.ws20.uebung3.persistence.PersistenceException;
+import org.hbrs.se.ws20.uebung3.control.persistence.PersistenceException;
 import java.util.ArrayList;
+import java.util.List;
 
 public final class Container {
 
-    private final ArrayList<Member> memberList = new ArrayList<>();
+    private final List<Member> memberList = new ArrayList<>();
 
     private static final Container INSTANCE = new Container();
 
@@ -38,19 +39,9 @@ public final class Container {
                 "Objekt: " + memberToRemove.getID() + " gelöscht.";
     }
 
-
-    // Methode zur Ausgabe der Member des Containers auf Kommandozeile
-    public void dump() {
-        for(Member member : memberList) {
-            System.out.println(member.toString());
-        }
-    }
-
-
     public int size() {
         return memberList.size();
     }
-
 
     public Member get(int i) {
         return memberList.get(i);

@@ -1,4 +1,4 @@
-package org.hbrs.se.ws20.uebung3.persistence;
+package org.hbrs.se.ws20.uebung3.control.persistence;
 
 public class PersistenceException extends Exception {
 
