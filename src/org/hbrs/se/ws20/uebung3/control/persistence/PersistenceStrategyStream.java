@@ -7,7 +7,9 @@ import java.util.List;
 public class PersistenceStrategyStream<Member> implements PersistenceStrategy<Member> {
 
     ObjectInputStream ois = null;
+    ObjectOutputStream oos = null;
     FileInputStream fis = null;
+    FileOutputStream fos = null;
     List<Member> newListe =  null;
 
     @Override
@@ -16,7 +18,7 @@ public class PersistenceStrategyStream<Member> implements PersistenceStrategy<Me
             fis = new FileInputStream(" a location to a file");
             ois = new ObjectInputStream(fis);
         } catch (IOException e) {
-            e.getStackTrace();
+            e.printStackTrace();
         }
     }
 
@@ -24,9 +26,11 @@ public class PersistenceStrategyStream<Member> implements PersistenceStrategy<Me
     public void closeConnection() throws PersistenceException {
         try {
             fis.close();
+            fos.close();
             ois.close();
+            oos.close();
         } catch (IOException e) {
-            e.getStackTrace();
+            e.printStackTrace();
         }
     }
 
@@ -35,10 +39,14 @@ public class PersistenceStrategyStream<Member> implements PersistenceStrategy<Me
      * Method for saving a list of Member-objects to a disk (HDD)
      */
     public void save(List<Member> member) throws PersistenceException  {
-        try (OutputStream output = new FileOutputStream(" a location to a file")) {
-
+        try {
+            openConnection();
+            fos = new FileOutputStream(" a location to a file");
+            oos = new ObjectOutputStream(fos);
+            oos.writeObject(member);
+            closeConnection();
         } catch (IOException e) {
-            e.getStackTrace();
+            e.printStackTrace();
         }
     }
 
@@ -57,7 +65,7 @@ public class PersistenceStrategyStream<Member> implements PersistenceStrategy<Me
                 return newListe;
             }
         } catch (IOException | ClassNotFoundException e) {
-            e.getStackTrace();
+            e.printStackTrace();
         }
         closeConnection();
         return null;
