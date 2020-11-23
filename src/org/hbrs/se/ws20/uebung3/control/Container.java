@@ -1,14 +1,16 @@
 package org.hbrs.se.ws20.uebung3.control;
 
-import org.hbrs.se.ws20.uebung3.control.persistence.PersistenceException;
+import org.hbrs.se.ws20.uebung3.control.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Container {
 
-    private final List<Member> memberList = new ArrayList<>();
+    private List<Member> memberList = new ArrayList<>();
 
     private static final Container INSTANCE = new Container();
+
+    private PersistenceStrategy<Member> persistence = new PersistenceStrategyStream<>();
 
     private Container() {}
 
@@ -52,7 +54,12 @@ public class Container {
     }
 
     public void store() throws PersistenceException {
-
+        persistence.save(memberList);
     }
+
+    public void load() throws PersistenceException {
+        memberList = persistence.load();
+    }
+
 
 }
