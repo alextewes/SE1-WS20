@@ -15,7 +15,7 @@ public class PersistenceStrategyStream<Member> implements PersistenceStrategy<Me
     @Override
     public void openConnection() throws PersistenceException {
         try {
-            fis = new FileInputStream(" a location to a file");
+            fis = new FileInputStream("sampleFile");
             ois = new ObjectInputStream(fis);
         } catch (IOException e) {
             e.printStackTrace();
@@ -41,7 +41,7 @@ public class PersistenceStrategyStream<Member> implements PersistenceStrategy<Me
     public void save(List<Member> member) throws PersistenceException  {
         try {
             openConnection();
-            fos = new FileOutputStream(" a location to a file");
+            fos = new FileOutputStream("sampleFile");
             oos = new ObjectOutputStream(fos);
             oos.writeObject(member);
             closeConnection();
