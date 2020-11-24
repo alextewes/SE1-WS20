@@ -1,12 +1,13 @@
 package org.hbrs.se.ws20.uebung3.control;
 
-public class MemberImpl implements Member {
+import java.io.Serializable;
+
+public class MemberImpl implements Member, Serializable {
 
     private final int ID;
-    private static int memberCount;
 
-    public MemberImpl() {
-        this.ID = ++memberCount;
+    public MemberImpl(int id) {
+        this.ID = id;
     }
 
     @Override
