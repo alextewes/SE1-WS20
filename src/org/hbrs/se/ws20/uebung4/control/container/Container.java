@@ -1,6 +1,6 @@
 package org.hbrs.se.ws20.uebung4.control.container;
 
-import org.hbrs.se.ws20.uebung4.control.Member;
+import org.hbrs.se.ws20.uebung4.control.UserStory;
 import org.hbrs.se.ws20.uebung4.control.persistence.PersistenceException;
 import org.hbrs.se.ws20.uebung4.control.persistence.PersistenceStrategy;
 
@@ -9,11 +9,11 @@ import java.util.List;
 
 public class Container {
 
-    private List<Member> memberList = new ArrayList<>();
+    private List<UserStory> list = new ArrayList<>();
 
     private static Container INSTANCE = null;
 
-    private PersistenceStrategy<Member> persistence = null;
+    private PersistenceStrategy<UserStory> persistence = null;
 
     private Container() {}
 
@@ -24,51 +24,51 @@ public class Container {
         return INSTANCE;
     }
 
-    public void setPersistence(PersistenceStrategy<Member> persistenceStrategy) {
+    public void setPersistence(PersistenceStrategy<UserStory> persistenceStrategy) {
         this.persistence = persistenceStrategy;
     }
 
     // Methode zum Hinzufügen von Member-Objekten zum Container
-    public void addMember(Member member) throws ContainerException {
-        if(memberList.contains(member)) {
+    public void addMember(UserStory userStory) throws ContainerException {
+        if(list.contains(userStory)) {
             throw new ContainerException("Das Member-Objekt mit der ID " +
-                    member.getID() + " ist bereits vorhanden!");
+                    userStory.getID() + " ist bereits vorhanden!");
         }
-        memberList.add(member);
+        list.add(userStory);
     }
 
 
     // Methode zum Löschen von Member-Objekten des Containers
     public String deleteMember(Integer id) {
-        Member memberToRemove = null;
-        for (Member member : memberList) {
-            if(member.getID().equals(id)) {
-                memberToRemove = member;
+        UserStory toRemove = null;
+        for (UserStory userStory : list) {
+            if(userStory.getID().equals(id)) {
+                toRemove = userStory;
             }
         }
-        memberList.remove(memberToRemove);
-        return memberToRemove == null ? "Fehler: Objekt nicht gefunden." :
-                "Objekt: " + memberToRemove.getID() + " gelöscht.";
+        list.remove(toRemove);
+        return toRemove == null ? "Fehler: Objekt nicht gefunden." :
+                "Objekt: " + toRemove.getID() + " gelöscht.";
     }
 
     public int size() {
-        return memberList.size();
+        return list.size();
     }
 
-    public Member get(int i) {
-        return memberList.get(i);
+    public UserStory get(int i) {
+        return list.get(i);
     }
 
-    public List<Member> getCurrentList() {
-        return memberList;
+    public List<UserStory> getCurrentList() {
+        return list;
     }
 
     public void store() throws PersistenceException {
-        persistence.save(memberList);
+        persistence.save(list);
     }
 
     public void load() throws PersistenceException {
-        memberList = persistence.load();
+        list = persistence.load();
     }
 
 
