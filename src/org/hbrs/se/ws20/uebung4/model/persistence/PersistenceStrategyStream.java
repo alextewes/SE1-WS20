@@ -1,7 +1,7 @@
-package org.hbrs.se.ws20.uebung4.control.persistence;
+package org.hbrs.se.ws20.uebung4.model.persistence;
 
 
-import org.hbrs.se.ws20.uebung4.control.UserStory;
+import org.hbrs.se.ws20.uebung4.model.UserStory;
 
 import java.io.*;
 import java.util.List;

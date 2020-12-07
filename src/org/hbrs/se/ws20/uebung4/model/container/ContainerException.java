@@ -1,4 +1,4 @@
-package org.hbrs.se.ws20.uebung4.control.container;
+package org.hbrs.se.ws20.uebung4.model.container;
 
 public class ContainerException extends Exception {
 

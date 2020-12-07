@@ -1,8 +1,8 @@
-package org.hbrs.se.ws20.uebung4.control.container;
+package org.hbrs.se.ws20.uebung4.model.container;
 
-import org.hbrs.se.ws20.uebung4.control.UserStory;
-import org.hbrs.se.ws20.uebung4.control.persistence.PersistenceException;
-import org.hbrs.se.ws20.uebung4.control.persistence.PersistenceStrategy;
+import org.hbrs.se.ws20.uebung4.model.UserStory;
+import org.hbrs.se.ws20.uebung4.model.persistence.PersistenceException;
+import org.hbrs.se.ws20.uebung4.model.persistence.PersistenceStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
