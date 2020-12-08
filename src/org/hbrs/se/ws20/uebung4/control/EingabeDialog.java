@@ -39,7 +39,6 @@ public class EingabeDialog {
                     } catch(PersistenceException e) {
                         e.printStackTrace();
                     }
-                    System.out.println("Speichern erfolgreich!");
                     break;
                 case "load":
                     if(inputs.length > 1) {
