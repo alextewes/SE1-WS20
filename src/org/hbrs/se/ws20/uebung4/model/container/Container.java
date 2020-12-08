@@ -1,5 +1,6 @@
 package org.hbrs.se.ws20.uebung4.model.container;
 
+import org.hbrs.se.ws20.solutions.uebung3.Member;
 import org.hbrs.se.ws20.uebung4.model.UserStory;
 import org.hbrs.se.ws20.uebung4.model.persistence.PersistenceException;
 import org.hbrs.se.ws20.uebung4.model.persistence.PersistenceStrategy;
@@ -65,16 +66,49 @@ public class Container {
     }
 
     public void store() throws PersistenceException {
-        persistence.save(list);
+        if (this.persistence == null)
+            throw new PersistenceException( PersistenceException.ExceptionType.LoadFailure,
+                    "Strategy not initialized");
+
+        this.openConnection();
+        this.persistence.save( this.list  );
     }
 
     public void load() throws PersistenceException {
-        list = persistence.load();
+        if (this.persistence == null)
+            throw new PersistenceException( PersistenceException.ExceptionType.NoStrategyIsSet,  "Strategy not initialized");
+
+        List<UserStory> list = this.persistence.load();
+        this.list = list;
     }
 
     public void loadMerge() throws PersistenceException {
-        List<UserStory> newList = persistence.load();
-        list.addAll(newList);
+        if (this.persistence == null)
+            throw new PersistenceException( PersistenceException.ExceptionType.NoStrategyIsSet,  "Strategy not initialized");
+
+        List<UserStory> newList = this.persistence.load();
+        List<Integer> IDS = new ArrayList<>();
+        for (UserStory u : this.list) {
+            IDS.add(u.getID());
+        }
+        for (UserStory u : newList) {
+            if(IDS.contains(u.getID())) {
+                System.out.println("Duplikat mit der ID: " + u.getID());
+            }
+            else {
+                this.list.add(u);
+            }
+        }
+
+
+    }
+
+    private void openConnection() throws PersistenceException {
+        try {
+            this.persistence.openConnection();
+        } catch( java.lang.UnsupportedOperationException e ) {
+            throw new PersistenceException( PersistenceException.ExceptionType.ImplementationNotAvailable , "Not implemented!" );
+        }
     }
 
 

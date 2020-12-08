@@ -49,7 +49,6 @@ public class EingabeDialog {
                             } catch (PersistenceException e) {
                                 e.printStackTrace();
                             }
-                            System.out.println("Laden erfolgreich!");
                         }
                         if (inputs[1].equals("merge")) {
                             try {
@@ -57,7 +56,6 @@ public class EingabeDialog {
                             } catch (PersistenceException e) {
                                 e.printStackTrace();
                             }
-                            System.out.println("Laden erfolgreich!");
                         }
                     }
                     break;
