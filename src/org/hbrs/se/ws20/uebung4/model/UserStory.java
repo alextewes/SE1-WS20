@@ -35,4 +35,59 @@ public class UserStory implements Serializable {
         return super.toString();
     }
 
+    public static int getUserStoryCount() {
+        return UserStoryCount;
+    }
+
+    public String getBeschreibung() {
+        return beschreibung;
+    }
+
+    public int getMehrwert() {
+        return mehrwert;
+    }
+
+    public int getStrafe() {
+        return strafe;
+    }
+
+    public int getAufwand() {
+        return aufwand;
+    }
+
+    public int getRisiko() {
+        return risiko;
+    }
+
+    public double getPrio() {
+        return prio;
+    }
+
+    public static void setUserStoryCount(int userStoryCount) {
+        UserStoryCount = userStoryCount;
+    }
+
+    public void setBeschreibung(String beschreibung) {
+        this.beschreibung = beschreibung;
+    }
+
+    public void setMehrwert(int mehrwert) {
+        this.mehrwert = mehrwert;
+    }
+
+    public void setStrafe(int strafe) {
+        this.strafe = strafe;
+    }
+
+    public void setAufwand(int aufwand) {
+        this.aufwand = aufwand;
+    }
+
+    public void setRisiko(int risiko) {
+        this.risiko = risiko;
+    }
+
+    public void setPrio(double prio) {
+        this.prio = prio;
+    }
 }
