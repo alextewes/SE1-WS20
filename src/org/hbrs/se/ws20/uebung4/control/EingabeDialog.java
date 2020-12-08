@@ -53,7 +53,7 @@ public class EingabeDialog {
                         }
                         if (inputs[1].equals("merge")) {
                             try {
-                                container.load();
+                                container.loadMerge();
                             } catch (PersistenceException e) {
                                 e.printStackTrace();
                             }

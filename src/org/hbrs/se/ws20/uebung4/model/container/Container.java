@@ -72,5 +72,10 @@ public class Container {
         list = persistence.load();
     }
 
+    public void loadMerge() throws PersistenceException {
+        List<UserStory> newList = persistence.load();
+        list.addAll(newList);
+    }
+
 
 }
