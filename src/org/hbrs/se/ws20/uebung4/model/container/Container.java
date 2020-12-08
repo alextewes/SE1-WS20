@@ -3,6 +3,7 @@ package org.hbrs.se.ws20.uebung4.model.container;
 import org.hbrs.se.ws20.uebung4.model.UserStory;
 import org.hbrs.se.ws20.uebung4.model.persistence.PersistenceException;
 import org.hbrs.se.ws20.uebung4.model.persistence.PersistenceStrategy;
+import org.hbrs.se.ws20.uebung4.model.persistence.PersistenceStrategyStream;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +14,7 @@ public class Container {
 
     private static Container INSTANCE = null;
 
-    private PersistenceStrategy<UserStory> persistence = null;
+    private PersistenceStrategy<UserStory> persistence = new PersistenceStrategyStream();
 
     private Container() {}
 
