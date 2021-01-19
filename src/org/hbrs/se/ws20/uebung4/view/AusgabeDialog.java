@@ -1,8 +1,7 @@
 package org.hbrs.se.ws20.uebung4.view;
 
-import org.hbrs.se.ws20.uebung4.control.*;
-import org.hbrs.se.ws20.uebung4.model.UserStory;
-import org.hbrs.se.ws20.uebung4.model.container.Container;
+import org.hbrs.se.ws20.uebung4.model.entity.UserStory;
+import org.hbrs.se.ws20.uebung4.model.Container;
 
 import java.util.Collections;
 import java.util.Comparator;

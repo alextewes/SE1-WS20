@@ -1,8 +1,8 @@
-package org.hbrs.se.ws20.uebung4.model.container;
+package org.hbrs.se.ws20.uebung4.model;
 
-import org.hbrs.se.ws20.solutions.uebung3.Member;
-import org.hbrs.se.ws20.uebung4.model.UserStory;
-import org.hbrs.se.ws20.uebung4.model.persistence.PersistenceException;
+import org.hbrs.se.ws20.uebung4.model.exception.ContainerException;
+import org.hbrs.se.ws20.uebung4.model.entity.UserStory;
+import org.hbrs.se.ws20.uebung4.model.exception.PersistenceException;
 import org.hbrs.se.ws20.uebung4.model.persistence.PersistenceStrategy;
 import org.hbrs.se.ws20.uebung4.model.persistence.PersistenceStrategyStream;
 

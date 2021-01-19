@@ -1,7 +1,6 @@
-package org.hbrs.se.ws20.uebung4.model;
+package org.hbrs.se.ws20.uebung4.model.entity;
 
 import java.io.Serializable;
-import java.util.Comparator;
 
 public class UserStory implements Serializable {
 

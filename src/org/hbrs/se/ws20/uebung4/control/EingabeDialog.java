@@ -1,9 +1,9 @@
 package org.hbrs.se.ws20.uebung4.control;
 
-import org.hbrs.se.ws20.uebung4.model.UserStory;
-import org.hbrs.se.ws20.uebung4.model.container.Container;
-import org.hbrs.se.ws20.uebung4.model.container.ContainerException;
-import org.hbrs.se.ws20.uebung4.model.persistence.PersistenceException;
+import org.hbrs.se.ws20.uebung4.model.entity.UserStory;
+import org.hbrs.se.ws20.uebung4.model.Container;
+import org.hbrs.se.ws20.uebung4.model.exception.ContainerException;
+import org.hbrs.se.ws20.uebung4.model.exception.PersistenceException;
 import org.hbrs.se.ws20.uebung4.view.AusgabeDialog;
 
 import java.util.Scanner;

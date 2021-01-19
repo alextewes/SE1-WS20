@@ -1,4 +1,4 @@
-package org.hbrs.se.ws20.uebung4;
+package org.hbrs.se.ws20.uebung4.view;
 
 import org.hbrs.se.ws20.uebung4.control.EingabeDialog;
 
