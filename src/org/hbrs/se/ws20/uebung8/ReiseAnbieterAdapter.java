@@ -3,15 +3,15 @@ package org.hbrs.se.ws20.uebung8;
 public class ReiseAnbieterAdapter {
 
     SuchErgebnis suche(SuchAuftrag s) {
-        return null;
+        return new SuchErgebnis();
     }
 
     private QueryObject transformINPUT(SuchAuftrag s) {
-        return null;
+        return new QueryObject();
     }
 
-    private SuchAuftrag transformOUTPUT(QueryObject q) {
-        return null;
+    private SuchErgebnis transformOUTPUT(QueryObject q) {
+        return new SuchErgebnis();
     }
 
 }
